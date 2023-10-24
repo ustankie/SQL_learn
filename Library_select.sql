@@ -85,12 +85,12 @@
     WHERE lastname='Anderson'
     ORDER BY firstname,middleinitial
 
-    SELECT LOWER(firstname+'_'+middleinitial+'_'+SUBSTRING(lastname,1,2)) AS email_name
+    SELECT LOWER(REPLACE(firstname,' ','_')+'_'+middleinitial+'_'+SUBSTRING(lastname,1,2)) AS email_name
     FROM member 
     WHERE lastname='Anderson'
     ORDER BY firstname,middleinitial
 
--- Ćw5
+-- Ćw5  
     -- Napisz polecenie, które wybiera title i title_no z tablicy title.
     -- - Wynikiem powinna być pojedyncza kolumna o formacie jak w przykładzie
     -- poniżej:
@@ -104,3 +104,6 @@
 
     SELECT 'Title is: ' + title + ', title number '+ cast(title_no AS varchar) AS 'Title info'
     FROM title
+
+
+
