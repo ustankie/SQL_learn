@@ -57,4 +57,5 @@ where orderid is null
     on Suppliers.SupplierID=products.SupplierID
     where UnitsInStock = 0
 
-    
+
+

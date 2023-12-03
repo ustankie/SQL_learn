@@ -140,3 +140,30 @@ from suppliers s cross JOIN shippers sh
         on p.ReportsTo=e.EmployeeID
         where p.EmployeeID is null
 
+        select reportsto, * from Employees
+
+select firstname + ' ' + lastname as name,city, postalcode
+from employees
+union
+select companyname, city, postalcode
+from customers
+
+select country from customers
+intersect
+select country from suppliers
+
+-- klienci którzy złożyli zamówienia w 1997 r. a nie złożyli zamówień w roku poprzednim
+
+    select o.customerid,companyname
+    from customers c inner join orders o
+    on o.customerId=c.customerid
+    where year(orderdate)=1997
+    except
+    select o.customerId,companyname
+    from customers c inner join orders o
+    on o.customerId=c.customerid
+    where year(orderdate)=1996
+
+    select customerid from orders where year(orderdate) = 1997
+    except
+    select customerid from orders where year(orderdate) = 1996

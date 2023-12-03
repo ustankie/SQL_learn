@@ -92,7 +92,7 @@
         where l.member_no is null
         order by j.birth_date desc
     
--- Ćw. 5
+-- Ćw. 5    
     -- 1. Podaj listę członków biblioteki mieszkających w Arizonie (AZ), którzy mają więcej niż dwoje
     -- dzieci zapisanych do biblioteki
 
